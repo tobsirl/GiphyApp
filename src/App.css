@@ -1,1 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+:root {
+  --ff-primary: 'Roboto', sans-serif;
+
+  --fw-regular-400: 400;
+  --fw-bold-700: 700;
+
+  /* Ratings Colors */
+  --clr-green: #008000;
+  --clr-yellow: #ecec04;
+  --clr-orange: #db8f00;
+  --clr-red: #c90202;
+
+  --box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-primary);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.giphy {
+  background-color: #f3f3f3;
+  margin: 1rem;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.giphy img {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.giphy__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  color: #000;
+}
+
+.giphy__info p {
+  margin: 0;
+}
+
+.giphy__details {
+  background-color: #f3f3f3;
+  padding: 0.25rem 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.giphy:hover .giphy__details {
+  transform: translateY(0%);
+}
+
+.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f3f3f3;
+  padding: 2rem;
+}
+
+.search {
+  background-color: transparent;
+  border: 2px solid #bebdbd;
+  border-radius: 5rem;
+  color: black;
+  font-family: inherit;
+  font-size: 1.25rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.tag {
+  background-color: #fff;
+  border: 2px solid black;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: var(--fw-bold-700);
+}
+
+.tag.green {
+  color: var(--clr-green);
+}
+
+.tag.yellow {
+  color: var(--clr-yellow);
+}
+
+.tag.orange {
+  color: var(--clr-orange);
+}
+
+.tag.red {
+  color: var(--clr-red);
+}
