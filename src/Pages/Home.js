@@ -7,6 +7,27 @@ export default function Home() {
 
   const [giphy, setGiphy] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  function handleOnChange(event) {
+    setSearchTerm(event.target.value);
+  }
+
+  async function handleOnSubmit(event) {
+    event.preventDefault();
+
+    if (searchTerm) {
+      const response = await fetch(
+        `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${searchTerm}&limit=25&offset=0&rating=g&lang=en`
+      );
+
+      const giphyData = await response.json();
+
+      setGiphy(giphyData.data);
+
+      setSearchTerm('');
+    }
+  }
 
   // fetch data from the api
   async function fetchGiphy() {
@@ -28,10 +49,24 @@ export default function Home() {
   if (loading) return <Loading />;
 
   return (
-    <div className="container">
-      {giphy.map((giphy) => (
-        <Giphy key={giphy.id} {...giphy} />
-      ))}
-    </div>
+    <>
+      <header className="header">
+        <form onSubmit={handleOnSubmit}>
+          {/* <label htmlFor="">Search Giphy</label> */}
+          <input
+            className="search"
+            type="search"
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={handleOnChange}
+          />
+        </form>
+      </header>
+      <div className="container">
+        {giphy.map((giphy) => (
+          <Giphy key={giphy.id} {...giphy} />
+        ))}
+      </div>
+    </>
   );
 }
