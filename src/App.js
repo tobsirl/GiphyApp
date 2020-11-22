@@ -5,7 +5,7 @@ import Random from './Pages/Random';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Switch>
         <Route exact path="/">
           <Home />
