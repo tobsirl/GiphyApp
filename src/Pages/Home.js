@@ -4,6 +4,8 @@ import Loading from '../Components/Loading';
 
 export default function Home() {
   const API_KEY = process.env.REACT_APP_GIP_API_KEY;
+  const trendingEndpoint = `https://api.giphy.com/v1/gifs/trending?api_key=`;
+  const searchEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=`;
 
   const [giphy, setGiphy] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,7 +20,7 @@ export default function Home() {
 
     if (searchTerm) {
       const response = await fetch(
-        `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${searchTerm}&limit=25&offset=0&rating=g&lang=en`
+        `${searchEndpoint}${API_KEY}&q=${searchTerm}&limit=25&offset=0&rating=g&lang=en`
       );
 
       const giphyData = await response.json();
@@ -31,9 +33,7 @@ export default function Home() {
 
   // fetch data from the api
   async function fetchGiphy() {
-    const response = await fetch(
-      `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=25`
-    );
+    const response = await fetch(`${trendingEndpoint}${API_KEY}&limit=25`);
 
     const giphyData = await response.json();
 

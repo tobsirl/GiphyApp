@@ -1,5 +1,5 @@
 import setColorRating from '../utils/setColorRating';
-
+import Proptypes from 'prop-types';
 function Giphy({
   id,
   title,
@@ -41,6 +41,17 @@ function Giphy({
     </div>
   );
 }
+
+Giphy.propTypes = {
+  id: Proptypes.string.isRequired,
+  title: Proptypes.string.isRequired,
+  rating: Proptypes.string.isRequired,
+  images: Proptypes.object.isRequired,
+  import_datetime: Proptypes.string.isRequired,
+  type: Proptypes.string.isRequired,
+  username: Proptypes.string.isRequired,
+  source_tld: Proptypes.string.isRequired,
+};
 
 Giphy.defaultProps = {
   source_tld: 'N/A',
