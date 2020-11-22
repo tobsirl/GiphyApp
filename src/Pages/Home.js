@@ -52,7 +52,6 @@ export default function Home() {
     <>
       <header className="header">
         <form onSubmit={handleOnSubmit}>
-          {/* <label htmlFor="">Search Giphy</label> */}
           <input
             className="search"
             type="search"
