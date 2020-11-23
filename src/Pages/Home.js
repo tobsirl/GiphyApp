@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Giphy from '../Components/Giphy';
 import Loading from '../Components/Loading';
 
@@ -51,6 +52,7 @@ export default function Home() {
   return (
     <>
       <header className="header">
+        <h1>Giphy App</h1>
         <form onSubmit={handleOnSubmit}>
           <input
             className="search"
@@ -60,6 +62,14 @@ export default function Home() {
             onChange={handleOnChange}
           />
         </form>
+        <ul className="nav">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/random">Random</Link>
+          </li>
+        </ul>
       </header>
       <div className="container">
         {giphy.map((giphy) => (

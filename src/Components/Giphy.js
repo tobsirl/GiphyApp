@@ -1,5 +1,6 @@
-import setColorRating from '../utils/setColorRating';
 import Proptypes from 'prop-types';
+import setColorRating from '../utils/setColorRating';
+import truncateString from '../utils/truncateString';
 function Giphy({
   id,
   title,
@@ -14,7 +15,7 @@ function Giphy({
     <div className="giphy" onClick={() => console.log(`Id: ${id}`)}>
       <img src={images.original.url} alt={title} />
       <div className="giphy__info">
-        <p>{title}</p>
+        <p>{truncateString(title, 40)}</p>
         <span className={`tag ${setColorRating(rating)}`}>
           {rating.toUpperCase()}
         </span>
