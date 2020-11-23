@@ -1,4 +1,10 @@
 # Giphy App 
+React application using [Giphy Api](https://developers.giphy.com/)
+
+## Features
+## Hosted
+Hosted on AWS using Amplify [Link](https://master.d1fpyj0wm36a47.amplifyapp.com/)
+
 
 ## Endpoints used
 | Endpoint | Request URL                                                                                                         |
@@ -8,5 +14,5 @@
 | Random   | https://api.giphy.com/v1/gifs/random?api_key=yaV41KWzdrpCOtWDwqW6GEcC9nf2LpqX&tag=&rating=g                         |
 
 ## Modules used
-React Router
-Prop Types
+* React Router
+* Prop Types
