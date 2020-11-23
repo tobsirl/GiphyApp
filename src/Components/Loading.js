@@ -1,23 +1,36 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-export default function Loading({ text = 'Loading' }) {
+const styles = {
+  content: {
+    fontSize: '35px',
+    position: 'absolute',
+    left: '0',
+    right: '0',
+    marginTop: '20px',
+    textAlign: 'center'
+  }
+};
+
+export default function Loading({ text = 'Loading', speed = 300 }) {
   const [content, setContent] = useState(text);
 
   useEffect(() => {
-    let id = window.setTimeout(() => {
-      setContent((content) => {
-        return content === `${text}...` ? text : `${text}.`;
-      }, 300);
-    });
+    const id = window.setInterval(() => {
+      setContent(content => {
+        return content === `${text}...` ? text : `${content}.`;
+      });
+    }, speed);
 
     return () => {
-      window.clearTimeout(id);
+      window.clearInterval(id);
     };
-  }, [text]);
+  }, [text, speed]);
 
-  return (
-    <div className="container">
-      <h1 className="text-center">{content}</h1>
-    </div>
-  );
+  return <p style={styles.content}>{content}</p>;
 }
+
+Loading.propTypes = {
+  text: PropTypes.string,
+  speed: PropTypes.number
+};

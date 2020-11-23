@@ -10,6 +10,7 @@ function Giphy({
   type,
   username,
   source_tld,
+  url,
 }) {
   return (
     <div className="giphy" onClick={() => console.log(`Id: ${id}`)}>
@@ -38,6 +39,9 @@ function Giphy({
         <p>
           <strong>Import Date & time:</strong> {import_datetime}
         </p>
+        <a className="btn" href={url} target="_blank" rel="noreferrer">
+          View on Giphy
+        </a>
       </div>
     </div>
   );
