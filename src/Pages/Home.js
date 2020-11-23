@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Giphy from '../Components/Giphy';
 import Loading from '../Components/Loading';
+import Navbar from '../Components/Navbar';
 
 export default function Home() {
   const API_KEY = process.env.REACT_APP_GIP_API_KEY;
@@ -51,27 +51,19 @@ export default function Home() {
 
   return (
     <>
-      <header className="header">
-        <h1>Giphy App</h1>
+      <Navbar />
+      <div className="search">
         <form onSubmit={handleOnSubmit}>
           <input
-            className="search"
+            className="search__input"
             type="search"
             placeholder="Search..."
             value={searchTerm}
             onChange={handleOnChange}
           />
         </form>
-        <ul className="nav">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/random">Random</Link>
-          </li>
-        </ul>
-      </header>
-      <div className="container">
+      </div>
+      <div className="container flex">
         {giphy.map((giphy) => (
           <Giphy key={giphy.id} {...giphy} />
         ))}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RandomGiphy from '../Components/RandomGiphy';
 import Loading from '../Components/Loading';
+import Navbar from '../Components/Navbar';
 
 export default function Random() {
   const API_KEY = process.env.REACT_APP_GIP_API_KEY;
@@ -26,9 +27,12 @@ export default function Random() {
   if (loading) return <Loading />;
 
   return (
-    <div className="container">
-      <h1>Random</h1>
-      <RandomGiphy data={randomGiphy} rollDice={setRoll} roll={roll} />
-    </div>
+    <>
+      <Navbar />
+      <div className="container flex">
+        <h1>Random</h1>
+        <RandomGiphy data={randomGiphy} rollDice={setRoll} roll={roll} />
+      </div>
+    </>
   );
 }
