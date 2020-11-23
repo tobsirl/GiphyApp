@@ -30,7 +30,6 @@ export default function Random() {
     <>
       <Navbar />
       <div className="container flex">
-        <h1>Random</h1>
         <RandomGiphy data={randomGiphy} rollDice={setRoll} roll={roll} />
       </div>
     </>

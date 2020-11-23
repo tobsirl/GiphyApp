@@ -171,3 +171,34 @@ body {
   margin: 0 0 0 1em;
   color: black;
 }
+
+/* Random  */
+.random {
+  display: flex;
+  flex-direction: column;
+}
+
+.random__btn {
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  padding: 2rem;
+}
+
+.btn-dice {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 8rem;
+}
+
+.btn-dice:hover {
+  transform: scale(1.1);
+}
+
+.btn-dice:focus {
+  outline: none;
+}
+
+.random__image {
+  height: 100vh;
+}

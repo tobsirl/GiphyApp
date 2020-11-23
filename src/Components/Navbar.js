@@ -12,20 +12,12 @@ export default function Navbar() {
           <ul className="nav__list">
             <li className="nav__item">
               <Link to="/" className="nav__link">
-                <FontAwesomeIcon
-                  icon={faHome}
-                  size="2x"
-                  style={{ color: 'black' }}
-                />
+                <FontAwesomeIcon icon={faHome} size="2x" />
               </Link>
             </li>
             <li className="nav__item">
               <Link to="/random" className="nav__link">
-                <FontAwesomeIcon
-                  icon={faDiceFive}
-                  size="2x"
-                  // style={{ color: 'black' }}
-                />
+                <FontAwesomeIcon icon={faDiceFive} size="2x" />
               </Link>
             </li>
           </ul>
