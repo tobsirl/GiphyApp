@@ -55,6 +55,7 @@ body {
   color: #000;
   margin-bottom: 1rem;
   border: 2px solid black;
+  border-radius: 5px;
 }
 
 .flex {
@@ -112,6 +113,7 @@ body {
   align-items: center;
 }
 
+/* Search bar */
 .search {
   display: flex;
   justify-content: space-around;
@@ -216,6 +218,4 @@ body {
   outline: none;
 }
 
-.random__image {
-  box-shadow: var(--box-shadow);
-}
+
