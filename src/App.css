@@ -38,10 +38,22 @@ body {
   padding: 0;
 }
 
+/* utility classes */
 .container {
   width: 85%;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.text-center {
+  text-align: center;
 }
 
 /* button */
@@ -56,13 +68,6 @@ body {
   margin-bottom: 1rem;
   border: 2px solid black;
   border-radius: 5px;
-}
-
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  flex-wrap: wrap;
 }
 
 .giphy {
@@ -217,5 +222,3 @@ body {
 .btn-dice:focus {
   outline: none;
 }
-
-

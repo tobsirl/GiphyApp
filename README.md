@@ -8,10 +8,11 @@ React application using [Giphy Api](https://developers.giphy.com/)
 ## Hosted
 Hosted on AWS using Amplify [Link](https://master.d1fpyj0wm36a47.amplifyapp.com/)
 ## Routing
-| Route   | Component | Description                                                    |
-|---------|-----------|----------------------------------------------------------------|
-| /       | Home      | Displays a list of “trending” gifs, ability to search for gifs |
-| /random | Random    | Displays a random gif                                          |
+| Route   | Component    | Description                                                    |
+|---------|--------------|----------------------------------------------------------------|
+| /       | Home         | Displays a list of “trending” gifs, ability to search for gifs |
+| /random | Random       | Displays a random gif                                          |
+| /*      | FourZeroFour | Catches bad routing requests, display 404 message              |
 
 
 ## API Endpoints used
