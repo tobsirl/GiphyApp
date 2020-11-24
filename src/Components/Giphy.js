@@ -1,4 +1,5 @@
 import Proptypes from 'prop-types';
+import formatDate from '../utils/formatDate';
 import setColorRating from '../utils/setColorRating';
 import truncateString from '../utils/truncateString';
 function Giphy({
@@ -37,7 +38,7 @@ function Giphy({
           <strong>Source:</strong> {source_tld}
         </p>
         <p>
-          <strong>Import Date & time:</strong> {import_datetime}
+          <strong>Date & time:</strong> {formatDate(import_datetime)}
         </p>
         <a className="btn" href={url} target="_blank" rel="noreferrer">
           View on Giphy

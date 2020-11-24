@@ -1,6 +1,6 @@
-import Proptypes from 'prop-types';
 import setColorRating from '../utils/setColorRating';
 import truncateString from '../utils/truncateString';
+import formatDate from '../utils/formatDate';
 
 import { GiRollingDices } from 'react-icons/gi';
 export default function RandomGiphy(props) {
@@ -53,7 +53,7 @@ export default function RandomGiphy(props) {
               <strong>Source:</strong> {source_tld}
             </p>
             <p>
-              <strong>Import Date & time:</strong> {import_datetime}
+              <strong>Date & time:</strong> {formatDate(import_datetime)}
             </p>
             <a className="btn" href={url} target="_blank" rel="noreferrer">
               View on Giphy
@@ -64,14 +64,3 @@ export default function RandomGiphy(props) {
     </>
   );
 }
-
-RandomGiphy.propTypes = {
-  id: Proptypes.string.isRequired,
-  title: Proptypes.string.isRequired,
-  rating: Proptypes.string.isRequired,
-  images: Proptypes.object.isRequired,
-  import_datetime: Proptypes.string.isRequired,
-  type: Proptypes.string.isRequired,
-  username: Proptypes.string.isRequired,
-  source_tld: Proptypes.string.isRequired,
-};
