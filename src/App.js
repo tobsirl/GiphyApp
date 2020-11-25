@@ -8,7 +8,7 @@ import FourZeroFour from './Pages/FourZeroFour';
 
 function App() {
   return (
-    <div className="background">
+    <div>
       <Switch>
         <Route exact path="/">
           <Home />
